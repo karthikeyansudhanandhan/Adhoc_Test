@@ -258,22 +258,7 @@ import pageObjectClass.pageObjects;
 
 	    }
 		
-		/*@AfterClass		
-	    public static void result(ITestResult iTestResult) throws Exception {
-	        if(iTestResult.getStatus()==ITestResult.SUCCESS)
-	        {
-	        	String screenshot= TestBase.captureEvidence((iTestResult.getName() +titleName)); 
-	            logger.addScreenCapture(screenshot);
-	        }
-	        else if(iTestResult.getStatus()==ITestResult.FAILURE)
-	        {
-	            String screenshot= TestBase.captureEvidence((iTestResult.getName() +titleName)); 
-	            //logger.log(logStatus, stepName, t);(LogStatus.FAIL,iTestResult.getThrowable().getMessage(),MediaEntityBuilder.createScreenCaptureFromPath(screenshot).build()); 
-
-	         
-	              
-	        }     
-	    } */
+		
 		
 		
 		public static void click(String UIName, String objTechName) throws Exception
@@ -284,9 +269,9 @@ import pageObjectClass.pageObjects;
 		    	   WebDriverWait wait = new WebDriverWait(driver, 350); 
 		    	   WebElement elementToClick = driver.findElement(ObjectMap.getLocator(objTechName));
 		    	   wait.until(ExpectedConditions.elementToBeClickable(elementToClick));
-		    	   //captureEvidence(UIName);
+		    	
 		    	   elementToClick.click();
-		    	  // captureEvidence(UIName);
+		    	  
 		    	   logger.log(LogStatus.PASS, UIName+"  clicked successfully");
 		    	//   logger.fail(iTestResult.getThrowable().getMessage(), MediaEntityBuilder.createScreenCaptureFromPath("H:\\SWD\\Selenium\\reports").build());
 		    			  
