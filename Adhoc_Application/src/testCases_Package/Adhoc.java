@@ -36,7 +36,7 @@ import pageObjectClass.pageObjects;
 
 
 public class Adhoc extends TestBase  {
-//king master
+
 	
 	@BeforeClass
 	public void LTD() throws Exception

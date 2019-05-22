@@ -273,13 +273,7 @@ import pageObjectClass.pageObjects;
 		    	   elementToClick.click();
 		    	  
 		    	   logger.log(LogStatus.PASS, UIName+"  clicked successfully");
-		    	//   logger.fail(iTestResult.getThrowable().getMessage(), MediaEntityBuilder.createScreenCaptureFromPath("H:\\SWD\\Selenium\\reports").build());
-		    			  
-		    	   
-		    	   //logger.log(LogStatus.PASS, UIName, "Clicked Succefully");
-		    	   //Logger.log();
-		    	   //logger.log(LogStatus.PASS, (String) UIName, "details");
-		    	   
+		    	    	   
 		       }
 		       catch(NullPointerException e)
 		       {
