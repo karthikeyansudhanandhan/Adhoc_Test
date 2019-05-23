@@ -17,6 +17,9 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -33,7 +36,7 @@ import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 import pageObjectClass.pageObjects;
-<<<<<<< HEAD
+
 
 //import stadium.pageObjects;
 
@@ -48,7 +51,7 @@ import pageObjectClass.pageObjects;
 
 	public class TestBase extends pageObjects
 	{
-		protected static String ReferenceNumber;
+		//protected static String ReferenceNumber;
 		public static WebDriver driver;
 		public static ExtentReports report;
 		//public static ExtentTest logger;
@@ -60,11 +63,11 @@ import pageObjectClass.pageObjects;
 	    public static String titleName =null;
 	    //public static ExtentTest logger;
 	    //public static ExtentReports report;
-	    public WebDriver IEWebdriver()
-=======
-public class TestBase extends pageObjects
->>>>>>> branch 'master' of https://github.com/karthikeyansudhanandhan/Adhoc_Test.git
-		{
+	 
+
+
+
+	    {
 
 	    	System.setProperty("webdriver.ie.driver",System.getProperty("user.home")+"\\IEDriverServer.exe");
 	    	 driver=new InternetExplorerDriver();
@@ -88,21 +91,11 @@ public class TestBase extends pageObjects
 				e.printStackTrace();
 			}
 			driver.get(prop.getProperty("Adhoc_ApplicationURL"));
-				return driver;
-		}
-=======
-			protected static String ReferenceNumber;
-			public static WebDriver driver;
-			public static ExtentReports report;
-			//public static ExtentTest logger;
-			public static ExtentTest  logger = new ExtentTest("", "");  
-		    //public static WebDriver driver=",";
-			public static Properties prop = null;
-			public static String titleName =null;
-			//public static ExtentTest logger;
-			//public static ExtentReports report;
->>>>>>> branch 'master' of https://github.com/karthikeyansudhanandhan/Adhoc_Test.git
-	    
+				//return driver;
+
+	}
+			
+
 /*public WebDriver IEWebdriver() throws IOException
 	{
 	   	System.setProperty("webdriver.ie.driver","C:\\SWD\\IEDriverServer.exe");
@@ -433,7 +426,7 @@ public static void Team_Leader_Approval_TB(String UIName) throws Exception
 		} catch (NullPointerException e) 
 		{	
 		}
-<<<<<<< HEAD
+
 
 
 
@@ -447,37 +440,9 @@ public static void Team_Leader_Approval_TB(String UIName) throws Exception
 	
 	
 		
-		public static void SelectedAlign() throws Exception
-		{
-			WebElement checkbox = driver.findElement(By.xpath(".//*[@id='dataGrid']//tbody/tr[2]/td[1]"));	  
-			System.out.println(checkbox);
-		    int count = checkbox.findElements(By.tagName("input")).size();
-		    System.out.println(count);
-		    
-		    int sum=0;
-		    for (int j = 0; j<count; j++ ) 
-			  {
-			  	   
-			  	 if(checkbox.findElement(By.xpath(".//*[@id='dataGrid']/tbody/tr["+j+"]/td[1]")).isEnabled())
-			  	   	{
-			  	 sum=sum+j;
-			  	   
-			  	   	}
-			  	 System.out.println(sum);
-			  }
-		    
-		    for (int i = 0; i<sum; i++ ) 
-		  {
-		  	   
-		  	 if(checkbox.findElement(By.xpath(".//*[@id='dataGrid']/tbody/tr["+i+"]/td[1]")).isEnabled())
-		  	   	{
-		  	   checkbox.findElements(By.tagName("input")).get(i).click();
-		  	   
-		  	   	}
-		  	 
-		  }
+		
 
-		}
+		
 		
 		/*Cashman Functions*/
 		
@@ -612,25 +577,7 @@ public static void Team_Leader_Approval_TB(String UIName) throws Exception
 		/*ACB Function*/
 		
 		
-		public static void ACB_Persel(String UIName, String objTechName, String data) throws Exception {
-
-			int Count = driver.findElements(By.xpath(".//*[@id='dataGrid']/tbody/tr")).size();
-
-			if (Count >= 1) {
-				WebDriverWait wait = new WebDriverWait(driver, 300);
-				WebElement element = driver.findElement(ObjectMap.getLocator(objTechName));
-				wait.until(ExpectedConditions.visibilityOf(element));
-				element.clear();
-				element.sendKeys(data);
-				driver.findElement(By.name("dataGrid$ctl02$%_Increase")).click();
-				driver.findElement(By.name("applyIncrease")).click();
-
-			} else {
-				return;
-
-			}
-
-		}
+		
 
 		public static void ACB_PerALL(String UIName, String objTechName, String data) throws Exception 
 		{
@@ -876,12 +823,9 @@ public static void Team_Leader_Approval_TB(String UIName) throws Exception
 		       
 		}
 
-		
-		
-=======
->>>>>>> branch 'master' of https://github.com/karthikeyansudhanandhan/Adhoc_Test.git
-	}
-	}
+
+	
+	
 public static void SelectedAlign() throws Exception
 	{
 	WebElement checkbox = driver.findElement(By.xpath(".//*[@id='dataGrid']//tbody/tr[2]/td[1]"));	 
@@ -900,33 +844,11 @@ public static void SelectedAlign() throws Exception
 	{
 	checkbox.findElements(By.tagName("input")).get(i).click();	   
 	}	 
+	
 	}
 	}
-public static void Select_Product(String UIName) throws Exception 
-	{
-	int Count = driver.findElements(By.xpath(".//*[@id='dataGrid']/tbody/tr")).size();			
-	for (int j = 7; j <= Count-1; j++)
-	{
-	boolean checked = driver.findElement(By.xpath(".//*[@id='dataGrid']/tbody/tr["+j+"]/td[1]/input")).isSelected();
-	if (!checked) 
-	{
-		driver.findElement(By.xpath(".//*[@id='dataGrid']/tbody/tr["+j+"]/td[1]/input")).click();					
-	}		
 	}
-	}
-public static String isEnabled(String UIName, String objectTechName)
-	{
-		try
-	{				
-	driver.findElement(ObjectMap.getLocator(objectTechName)).getText().equals("No data to display.");
-	return "true";	
-	}
-	catch (Exception e)
-	{return "false";
-	}
-	}
-}
-		
+
 	
 	
 
