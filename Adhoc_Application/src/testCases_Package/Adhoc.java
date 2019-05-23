@@ -37,15 +37,13 @@ public class Adhoc extends TestBase  {
 	@BeforeClass
 	public void LTD() throws Exception
 	{
-<<<<<<< HEAD
+
 		System.out.println("Before class");
 		IEWebdriver();
 		
-		//createReport();
-=======
-		//testing
+
 		createReport();
->>>>>>> branch 'master' of https://github.com/karthikeyansudhanandhan/Adhoc_Test.git
+
 	}
 	
 	@AfterClass
