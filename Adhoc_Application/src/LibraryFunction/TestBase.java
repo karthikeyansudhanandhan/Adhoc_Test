@@ -66,13 +66,13 @@ import pageObjectClass.pageObjects;
 		
 		
 	    //public static WebDriver driver=",";
-	    public static Properties prop = null;
+	    public static Properties prop = new Properties();
 	    public static String titleName =null;
 	    //public static ExtentTest logger;
 	    //public static ExtentReports report;
 	    public WebDriver IEWebdriver()
 		{
-	    	System.setProperty("webdriver.ie.driver","C:\\SWD\\IEDriverServer.exe");
+	    	System.setProperty("webdriver.ie.driver",System.getProperty("user.home")+"\\IEDriverServer.exe");
 	    	 driver=new InternetExplorerDriver();
 			//ChromeOptions options = new ChromeOptions();
 			//options.setExperimentalOption("useAutomationExtension", false);
@@ -83,7 +83,7 @@ import pageObjectClass.pageObjects;
 			
 			try
 			{
-				fis = new FileInputStream("C:\\Users\\cc313423\\Desktop\\PROJECT\\CashOnline\\datadriven.properties");
+				fis = new FileInputStream(System.getProperty("user.dir")+"\\datadriven.properties");
 				
 				prop.load(fis);
 			} 
@@ -1087,7 +1087,8 @@ import pageObjectClass.pageObjects;
 		wb.write(FOS);
 		       
 		FOS.close();
-		wb.close();
+		//wb.close();
+		
 		       
 		}
 

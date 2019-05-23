@@ -38,6 +38,8 @@ public class Adhoc extends TestBase  {
 	public void LTD() throws Exception
 	{
 		System.out.println("Before class");
+		IEWebdriver();
+		
 		//createReport();
 	}
 	
