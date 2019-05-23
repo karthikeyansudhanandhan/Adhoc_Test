@@ -37,24 +37,50 @@ public class Adhoc extends TestBase  {
 	@BeforeClass
 	public void LTD() throws Exception
 	{
+<<<<<<< HEAD
 		System.out.println("Before class");
 		IEWebdriver();
 		
 		//createReport();
+=======
+		//testing
+		createReport();
+>>>>>>> branch 'master' of https://github.com/karthikeyansudhanandhan/Adhoc_Test.git
 	}
 	
 	@AfterClass
 	public void Save() throws Exception
 	{
-		System.out.println("After class");
-		//savereport();
-		
+		savereport();
 	}
 	
 	@Test
-	public void LoginSetup() throws Exception
+public void LoginSetup() throws Exception
+
 	{
-		System.out.println("Test");
+
+		File sheet2 = new File("C:\\SWD\\LTD Application\\LTD.xlsx");
+		FileInputStream incident = new FileInputStream(sheet2);
+		XSSFWorkbook wb=new XSSFWorkbook(incident);
+		XSSFSheet Sheet2 = wb.getSheetAt(0);
+	
+		IEWebdriver();
+		TestBase.Steplogs("Adhoc Application");
+		for (int i=1;i<=Sheet2.getLastRowNum();i++)
+		{
+		/*XSSFRow rownumber = Sheet2.getRow(i);
+		
+		XSSFCell Drawee=rownumber.getCell(15);
+		String DraweeID =Drawee .toString();
+		*/
+		}
+		}
+	 
+	
+
+	
+
 	}
 	
-}
+
+
