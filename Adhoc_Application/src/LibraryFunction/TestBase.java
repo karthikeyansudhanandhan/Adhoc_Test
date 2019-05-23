@@ -46,7 +46,7 @@ public class TestBase extends pageObjects
 			//public static ExtentTest logger;
 			//public static ExtentReports report;
 	    
-public WebDriver IEWebdriver() throws IOException
+/*public WebDriver IEWebdriver() throws IOException
 	{
 	   	System.setProperty("webdriver.ie.driver","C:\\SWD\\IEDriverServer.exe");
 	   	driver=new InternetExplorerDriver();
@@ -62,7 +62,42 @@ public WebDriver IEWebdriver() throws IOException
 			System.out.println("Invoke");
 			return null;
 			
-	 }
+	 }*/
+			 public static  WebDriver IEWebdriver()
+				{
+			    	System.setProperty("webdriver.ie.driver","C:\\SWD\\IEDriverServer.exe");
+			    	//System.setProperty("webdriver.chrome.driver", "H:\\SWD\\chromedriver.exe");
+			    	 /* 	ChromeOptions options = new ChromeOptions();
+			    	options.addArguments("no-sandbox");
+			    	options.addArguments("disable-extensions");
+			    	options.addArguments("--allow-running-insecure-content");
+		            options.addArguments("--disable-extensions");
+		            options.setExperimentalOption("useAutomationExtension", false);
+		            options.addArguments("--disable-web-security");
+		            options.addArguments("--acceptSslCerts");
+		            options.addArguments("--acceptInsecureCerts");
+		            options.setAcceptInsecureCerts(true);*/
+			    	driver = new ChromeDriver(options);
+			    	driver.manage().window().maximize();
+					driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+					
+					FileInputStream fis = null;
+					
+					try
+					{
+						fis = new FileInputStream("C:\\SWD\\LTD Application\\datadriven.properties");
+						
+						prop.load(fis);
+					} 
+					catch (IOException e)
+					{
+					
+						e.printStackTrace();
+					}
+					driver.get(prop.getProperty("LTD"));
+						return driver;
+				}
+			    
 public static void createReport()
 	    {
 	    	try	{
