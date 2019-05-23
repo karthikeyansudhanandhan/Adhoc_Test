@@ -32,69 +32,27 @@ import org.testng.annotations.Test;
 import LibraryFunction.TestBase;
 import pageObjectClass.pageObjects;
 
-
-
-
 public class Adhoc extends TestBase  {
-
 	
 	@BeforeClass
 	public void LTD() throws Exception
 	{
-		createReport();
-		
+		System.out.println("Before class");
+		//createReport();
 	}
+	
 	@AfterClass
 	public void Save() throws Exception
 	{
-		
-		savereport();
+		System.out.println("After class");
+		//savereport();
 		
 	}
 	
 	@Test
-	
-// 2:15 Gyanv tesst
-	
 	public void LoginSetup() throws Exception
 	{
-		
-		File sheet2 = new File("C:\\SWD\\LTD Application\\LTD.xlsx");
-		FileInputStream incident = new FileInputStream(sheet2);
-		XSSFWorkbook wb=new XSSFWorkbook(incident);
-		XSSFSheet Sheet2 = wb.getSheetAt(0);
-		Thread.sleep(2000);
-		IEWebdriver();
-		
-		for (int i=1;i<=Sheet2.getLastRowNum();i++)
-		{
-		/*XSSFRow rownumber = Sheet2.getRow(i);
-		
-		XSSFCell Drawee=rownumber.getCell(15);
-		String DraweeID =Drawee .toString();
-		*/
-			
-		
-		{
+		System.out.println("Test");
+	}
 	
-		TestBase.Steplogs("Adhoc Application");
-		
-		
-		
-					}
-				}
-			 }
-	 	}
-		
-	
-
-
-
-
-	
-
-
-
-	
-
-
+}
