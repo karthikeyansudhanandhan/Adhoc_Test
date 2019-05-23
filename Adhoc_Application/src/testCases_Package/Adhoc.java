@@ -42,6 +42,7 @@ public class Adhoc extends TestBase  {
 	public void LTD() throws Exception
 	{
 		createReport();
+		System.out.println("Report");
 		
 	}
 	@AfterClass
@@ -53,10 +54,7 @@ public class Adhoc extends TestBase  {
 	}
 	
 	@Test
-	
-// 2:15 Gyanv tesst
-	
-	public void LoginSetup() throws Exception
+public void LoginSetup() throws Exception
 	{
 		
 		File sheet2 = new File("C:\\SWD\\LTD Application\\LTD.xlsx");
@@ -65,7 +63,7 @@ public class Adhoc extends TestBase  {
 		XSSFSheet Sheet2 = wb.getSheetAt(0);
 		Thread.sleep(2000);
 		IEWebdriver();
-		
+		TestBase.Steplogs("Adhoc Application");
 		for (int i=1;i<=Sheet2.getLastRowNum();i++)
 		{
 		/*XSSFRow rownumber = Sheet2.getRow(i);
@@ -73,18 +71,9 @@ public class Adhoc extends TestBase  {
 		XSSFCell Drawee=rownumber.getCell(15);
 		String DraweeID =Drawee .toString();
 		*/
-			
-		
-		{
-	
-		TestBase.Steplogs("Adhoc Application");
-		
-		
-		
-					}
-				}
-			 }
-	 	}
+		}
+		}
+	 }
 		
 	
 
