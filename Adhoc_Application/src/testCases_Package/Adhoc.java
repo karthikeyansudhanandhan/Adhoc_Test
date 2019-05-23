@@ -32,30 +32,37 @@ import org.testng.annotations.Test;
 import LibraryFunction.TestBase;
 import pageObjectClass.pageObjects;
 
-
-
-
 public class Adhoc extends TestBase  {
-
 	
 	@BeforeClass
 	public void LTD() throws Exception
 	{
+<<<<<<< HEAD
 		createReport();
 		System.out.println("Report");
 		
+=======
+		System.out.println("Before class");
+		//createReport();
+>>>>>>> branch 'master' of https://github.com/karthikeyansudhanandhan/Adhoc_Test.git
 	}
+	
 	@AfterClass
 	public void Save() throws Exception
 	{
-		
-		savereport();
+		System.out.println("After class");
+		//savereport();
 		
 	}
 	
 	@Test
+<<<<<<< HEAD
 public void LoginSetup() throws Exception
+=======
+	public void LoginSetup() throws Exception
+>>>>>>> branch 'master' of https://github.com/karthikeyansudhanandhan/Adhoc_Test.git
 	{
+<<<<<<< HEAD
 		
 		File sheet2 = new File("C:\\SWD\\LTD Application\\LTD.xlsx");
 		FileInputStream incident = new FileInputStream(sheet2);
@@ -88,3 +95,9 @@ public void LoginSetup() throws Exception
 	
 
 
+=======
+		System.out.println("Test");
+	}
+	
+}
+>>>>>>> branch 'master' of https://github.com/karthikeyansudhanandhan/Adhoc_Test.git
