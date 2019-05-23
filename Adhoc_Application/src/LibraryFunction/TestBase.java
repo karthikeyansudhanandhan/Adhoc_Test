@@ -65,7 +65,7 @@ import pageObjectClass.pageObjects;
 public class TestBase extends pageObjects
 >>>>>>> branch 'master' of https://github.com/karthikeyansudhanandhan/Adhoc_Test.git
 		{
-<<<<<<< HEAD
+
 	    	System.setProperty("webdriver.ie.driver",System.getProperty("user.home")+"\\IEDriverServer.exe");
 	    	 driver=new InternetExplorerDriver();
 			//ChromeOptions options = new ChromeOptions();
