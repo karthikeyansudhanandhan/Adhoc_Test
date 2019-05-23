@@ -77,7 +77,7 @@ public class TestBase extends pageObjects
 		            options.addArguments("--acceptSslCerts");
 		            options.addArguments("--acceptInsecureCerts");
 		            options.setAcceptInsecureCerts(true);*/
-			    	driver = new ChromeDriver(options);
+			    	//driver = new ChromeDriver(options);
 			    	driver.manage().window().maximize();
 					driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 					

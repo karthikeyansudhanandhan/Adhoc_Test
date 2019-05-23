@@ -37,35 +37,25 @@ public class Adhoc extends TestBase  {
 	@BeforeClass
 	public void LTD() throws Exception
 	{
-
 		createReport();
-		
-
 	}
 	
 	@AfterClass
 	public void Save() throws Exception
 	{
-		System.out.println("After class");
-		//savereport();
-		
+		savereport();
 	}
 	
 	@Test
-
-
-
-	public void LoginSetup() throws Exception
+public void LoginSetup() throws Exception
 
 	{
 
-		
 		File sheet2 = new File("C:\\SWD\\LTD Application\\LTD.xlsx");
 		FileInputStream incident = new FileInputStream(sheet2);
 		XSSFWorkbook wb=new XSSFWorkbook(incident);
 		XSSFSheet Sheet2 = wb.getSheetAt(0);
-		Thread.sleep(2000);
-		//test
+	
 		IEWebdriver();
 		TestBase.Steplogs("Adhoc Application");
 		for (int i=1;i<=Sheet2.getLastRowNum();i++)
