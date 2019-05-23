@@ -37,6 +37,7 @@ public class Adhoc extends TestBase  {
 	@BeforeClass
 	public void LTD() throws Exception
 	{
+		//testing
 		createReport();
 	}
 	
