@@ -37,24 +37,11 @@ import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 import pageObjectClass.pageObjects;
 
-
-//import stadium.pageObjects;
-
-//import stadium.ObjectMap;
-//import stadium.Uiactions.properties;
-
-//import stadium.ObjectMap;
-
-//import Defect_Report.ObjectMap;
-
-
-
-	public class TestBase extends pageObjects
+public class TestBase extends pageObjects
 	{
-		//protected static String ReferenceNumber;
+	
 		public static WebDriver driver;
 		public static ExtentReports report;
-		//public static ExtentTest logger;
 		public static ExtentTest  logger = new ExtentTest("", "");  
 		
 		
@@ -64,88 +51,25 @@ import pageObjectClass.pageObjects;
 	    //public static ExtentTest logger;
 	    //public static ExtentReports report;
 	 
-
-
-
-	    {
-
-	    	System.setProperty("webdriver.ie.driver",System.getProperty("user.home")+"\\IEDriverServer.exe");
-	    	 driver=new InternetExplorerDriver();
-			//ChromeOptions options = new ChromeOptions();
-			//options.setExperimentalOption("useAutomationExtension", false);
-			driver.manage().window().maximize();
-			driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-			
-			FileInputStream fis = null;
-			
-			try
-			{
-				fis = new FileInputStream(System.getProperty("user.dir")+"\\datadriven.properties");
-				
-				prop.load(fis);
-				//
-			} 
-			catch (IOException e)
-			{
-			
-				e.printStackTrace();
-			}
-			driver.get(prop.getProperty("Adhoc_ApplicationURL"));
-				//return driver;
-
-	}
-			
-
-/*public WebDriver IEWebdriver() throws IOException
+public static  WebDriver InitiateIEdriver()
 	{
-	   	System.setProperty("webdriver.ie.driver","C:\\SWD\\IEDriverServer.exe");
-	   	driver=new InternetExplorerDriver();
+		System.setProperty("webdriver.ie.driver",System.getProperty("user.home")+"\\IEDriverServer.exe");
+		driver=new InternetExplorerDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-		FileInputStream fis = null;
-			System.out.println("Before Invoke");
-			
-			//return driver;
-			fis = new FileInputStream("H:\\Git\\Adhoc_Application\\datadriven.properties");	
-			prop.load(fis);
-			driver.get(prop.getProperty("AdhocApplicationURL"));
-			System.out.println("Invoke");
-			return null;
-			
-	 }*/
-			 public static  WebDriver IEWebdriver()
+		FileInputStream fis = null;		
+			try
 				{
-			    	System.setProperty("webdriver.ie.driver","C:\\SWD\\IEDriverServer.exe");
-			    	//System.setProperty("webdriver.chrome.driver", "H:\\SWD\\chromedriver.exe");
-			    	 /* 	ChromeOptions options = new ChromeOptions();
-			    	options.addArguments("no-sandbox");
-			    	options.addArguments("disable-extensions");
-			    	options.addArguments("--allow-running-insecure-content");
-		            options.addArguments("--disable-extensions");
-		            options.setExperimentalOption("useAutomationExtension", false);
-		            options.addArguments("--disable-web-security");
-		            options.addArguments("--acceptSslCerts");
-		            options.addArguments("--acceptInsecureCerts");
-		            options.setAcceptInsecureCerts(true);*/
-			    	//driver = new ChromeDriver(options);
-			    	driver.manage().window().maximize();
-					driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-					
-					FileInputStream fis = null;
-					
-					try
-					{
-						fis = new FileInputStream("C:\\SWD\\LTD Application\\datadriven.properties");
-						
-						prop.load(fis);
-					} 
-					catch (IOException e)
-					{
-					
-						e.printStackTrace();
-					}
-					driver.get(prop.getProperty("LTD"));
-						return driver;
+				//fis = new FileInputStream("C:\\SWD\\LTD Application\\datadriven.properties");
+				fis = new FileInputStream(System.getProperty("user.dir")+"\\datadriven.properties");			
+				prop.load(fis);
+				} 
+				catch (IOException e)
+				{
+					e.printStackTrace();
+				}
+				driver.get(prop.getProperty("Adhoc_ApplicationURL"));
+				return driver;
 				}
 			    
 public static void createReport()
