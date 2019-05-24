@@ -29,7 +29,7 @@ public class SheetData1 {
        
 		try
 			{
-			fis = new FileInputStream("C:\\Users\\cc313272\\Desktop\\Ban\\Automation\\Project\\Stadium_APR\\Stadium_testData.xlsx");//Test data sheet path to be given
+			fis = new FileInputStream(System.getProperty("user.home")+"\\Desktop\\Ban\\Automation\\Project\\Stadium_APR\\Stadium_testData.xlsx");//Test data sheet path to be given
 			}
 		catch (FileNotFoundException e)
 			{
