@@ -39,7 +39,7 @@ public class Adhoc extends TestBase  {
 	{
 
 		System.out.println("Before class");
-		IEWebdriver();
+
 		
 
 		createReport();
@@ -62,7 +62,7 @@ public void LoginSetup() throws Exception
 		XSSFWorkbook wb=new XSSFWorkbook(incident);
 		XSSFSheet Sheet2 = wb.getSheetAt(0);
 	
-		IEWebdriver();
+		InitiateIEdriver();
 		TestBase.Steplogs("Adhoc Application");
 		for (int i=1;i<=Sheet2.getLastRowNum();i++)
 		{
